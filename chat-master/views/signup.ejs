@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Welcome</title>
+</head>
+
+<body>
+    <form action="/us/signup" method="POST">
+        <div align="center">
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr />
+            <label for="email"><b>Username</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="name" required />
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" id="email" required />
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required />
+
+            <label for="psw-repeat"><b>Comfirm Password</b></label>
+            <input type="password" placeholder="Comfirm Password" name="comPsw" id="compsw" required />
+
+
+            <!-- <a href="/us/signupnow?name=aaa&email=aa@aa.com&psw=111"><input type="button" value="Sign Up" id='signup'></a>  -->
+            <input type="submit" value="Sign Up" id='signup'>
+        </div>
+    </form>
+    <script src="/assets/js/jquery.js"></script>
+    <script>
+        $("#signup").click(function (e) {
+            let name = $("#name").val();
+            let email = $("#email").val();
+            let password = $("#password").val();
+            let compsw = $("#compsw").val();
+            if (name == "" && email == "" && password == "" && compsw == "") {
+                alert("Please fill out the form");
+            } else if (password != compsw) {
+                alert("Passwords do not match");
+                e.preventDefault();
+            }
+        });    
+    </script>
+</body>
+
+</html>

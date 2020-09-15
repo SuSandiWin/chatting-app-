@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+</head>
+<body>
+<%if(opp)
+{ %>
+    <h1>Logged in as <%= data %></h1>
+    <h1>Welcome <%= data %></h1>
+    <% } else
+{%>
+    <h1>Welcome <%= data %></h1>
+<% } %>
+
+
+<% if (results.length > 0){ %>
+    <table align="center">	
+        <% for(var i=0; i<results.length; i++) {%>
+            <tr>
+                <td>
+                    <%= results[i].name %> 
+                </td>
+                <td><a href="/us/chat/<%= results[i].id %>">Chat Now</a</td>
+                
+            </tr>
+
+        <% } %>
+    </table>
+
+<% } %>	
+
+
+<script>
+    function ry_click(da){
+        alert(da);
+    }
+</script>
+
+<p><a href="/us/logout">Logout</a></p>
+</body>
+</html>
